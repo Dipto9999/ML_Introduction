@@ -9,12 +9,12 @@ Note that you don't know the y-value in advance.
 In our <a href= "linear_regression.py">Notebook</a>, we are working with a data set of housing data and attempt to predict housing prices.
 The data set contains a number of features which are randomly generated. It is <a href = "https://nickmccullum.com/files/Housing_Data.csv">downloaded</a> from Nick McCullum's <a href= "https://nickmccullum.com">Website</a>.
 These include:
-<ol>
+<ul>
     <li>Average Income in the Area of the House</li>
     <li>Average Number of Total Rooms in the Area</li>
     <li>Price the House is Sold For</li>
     <li>Address of the House</li>
-</ol>
+</ul>
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 
