@@ -1,94 +1,112 @@
 # K-Nearest Neighbors
 
+## Contents
+* [Brief Description](#Brief-Description)
+    * [Simple Example ](#Simple-Example)
+    * [Building a K-Nearest Neighbors Algorithm](#Building-a-K-Nearest-Neighbors-Algorithm)
+    * [Importance of K](#Importance-of-K)
+    * [Pros and Cons of K-Nearest Neighbors Algorithm](#Pros-and-Cons-of-K-Nearest-Neighbors-Algorithm)
+* [Jupyter Notebook](#Jupyter-Notebook)
+    * [Data Set](#Data-Set)
+    * [Scaling](#Scaling)
+    * [Picking Best K Value](#Picking-Best-K-Value)
+        *[Elbow Method](#Elbow-Method)
+* [Source](#Source)
+
 ## Brief Description
+This is a Machine Learning Algorithm that can help you solve classification problems where there are more than 2 categories.
+This is based on the simple principle that a data point belongs to the category with the majority of the K closest data points.
 
+### Simple Example 
+If categorizing football players and basketball players and (2/3) of the closest data points to the new data point are football players,
+the K-Nearest Algorithm will predict that the new data point is also a football player.
 
-### Sigmoid Function
+### Building a K-Nearest Neighbors Algorithm
+General Steps:
+<ol>
+    <li>Store the data.</li>
+    <li>Calculate the <a href = "https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean distance</a> from the 
+        new data point x to all the other data points.</li>
+    <li>Sort the points in the Data Set in order of increasing distance from x.</li>
+    <li>Predict using the same category as the majority of the K closest data points to x.</li>
+</ol>
 
+### Importance of K
+Changing the value of K will change which category a new data point is assigned to:
+<ul>
+    <li>A low K value will cause your model to perfectly predict Training Data and poorly predict Test Data</li>
+    <li>A too high K value will make your model unnecessarily complex.</li>
+</ul>
 
-### Making Predictions
+The "best" value of K is where the error on the Test Data and Error on the Training Data are close to one another.
+This results in overall low predictive error.
 
+### Pros and Cons of K-Nearest Neighbors Algorithm
+<u>Main Advantages:</u>
+<ul>
+    <li>The algorithm is simple and easy to understand.</li>
+    <li>It is trivial to train the model on new Training Data.</li>
+    <li>It's easy to add more data to the Data Set.</li>
+    <li>The model accepts only 2 parameters : K and the distance metric you'd like to use (e.g. Euclidean distance)</li>
+</ul>
+
+<u>Main Disadvantages:</u>
+<ul>
+    <li>There's a high computational cost to making predictions.</li>
+    <li>It doesn't work well with categorical features.</li>
+</ul>
 
 ## Jupyter Notebook
-In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/K-Nearest_Neighbors/k-nearest_neighbors.ipynb">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
+In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/K-Nearest_Neighbors/k-nearest_neighbors.ipynb">Notebook</a>, we are working with an anonymous Data Set where the categories aren't known. This is very common in the real world (e.g. classified government data). 
 
 ### Data Set
-The data set contains information concerning the passengers and it is up to us to produce a Logistic Regression Model which we train to accurately make the predictions. 
-It is <a href = "https://nickmccullum.com/files/logistic-regression/titanic_train.csv">downloaded</a> from Nick McCullum's <a href= "https://nickmccullum.com">Website</a>. 
+Since we don't have much information regarding the Data Set, we must do as instructed and predict the 'TARGET CLASS' column. The Data Set is <a href = "https://nickmccullum.com/files/k-nearest-neighbors/classified_data.csv">downloaded</a> from Nick McCullum's <a href= "https://nickmccullum.com">Website</a>. 
 
-The information provided includes:
-<ul>
-    <li>Passenger ID</li>
-    <li>Whether or Not Passenger Survived</li>
-    <li>Passenger Class</li>
-    <li>Passenger Name</li>
-    <li>Passenger Sex</li>
-    <li>Passenger Age</li>
-    <li>Number of Siblings/Spouses Aboard Ship</li>
-    <li>Number of Parents/Children Aboard Ship</li>
-    <li>Passenger Ticket Number</li>
-    <li>Passenger Ticket Fare</li>
-    <li>Passenger Cabin Number</li>
-    <li>Port From Which Passenger Embarked</li>
-</ul>
+### Scaling
+It's necessary to scale the x-values of our Data Set to use the observations closest to the data point in order to make predictions. 
+It is common practice to standardize the Data Set by adjusting every x-value so they're approximately on the same scale.
 
-### Data Cleaning
+The <b>scikit-learn</b> library includes excellent functionality for this in the class <b>StandardScaler</b>.
 
-#### Missing Values in Columns
-To deal with missing values in relevant columns, we used a mathematical solution called <u>Imputation</u> to fill in the average value.
-A custom function was written for this task.
+``` python
+# Import the class StandardScaler from scikit-learn.
+    # This behaves similar to the class LinearRegression and LogisticRegression.
+from sklearn.preprocessing import StandardScaler
 
-```python
-def impute_missing_age(columns) :
-    age = columns[0]
-    passenger_class = columns[1]
+# Instantiate the class StandardScaler to fit the instance on Data Set.
+scaler = StandardScaler()
 
-    # Check if Age value is missing.
-    if pd.isnull(age) :
-        if (passenger_class == 1) :
-            # Return average value of Pclass 1.
-            return [titanic_data['Pclass'] == 1]['Age'].mean()
-        elif (passenger_class == 2) :
-            # Return average value of Pclass 2.
-            return [titanic_data['Pclass'] == 2]['Age'].mean()
-        elif (passenger_class == 3) :
-            # Return average value of Pclass 3.
-            return [titanic_data['Pclass'] == 3]['Age'].mean()
-    else
-        return age
+# Train the object scaler on Data Set.
+scaler.fit(raw_data.drop('TARGET CLASS', axis = 1))
+
+# Standardize all of the features in the Data Set to be approximately the same scale.
+    # The method transform creates a NumPy array of the features. 
+scaled_features = scaler.transform(raw_data.drop('TARGET CLASS', axis = 1))
+
+# Create a pandas DataFrame of the features.
+scaled_data = pd.DataFrame(scaled_features, columns = raw_data.drop('TARGET CLASS', axis = 1).columns)
 ```
 
-#### Removing Multicollinearity
-Since we must numerically work with our categorical features, we must ensure that numerical representations which are perfectly predictive of 
-each other are removed. This improves the predictive power of our algorithm.  For example, a 0 in Female column reduntantly indicates a 1 in Male column. 
+### Picking Best K Value
+Since the K value changes the predictive power and simplicity of our K-Nearest Neighbors Algorithm, we must be deliberate with the K value used to perform predictions on our Data Set.
+
+#### Elbow Method
+This involves iterating through a series of K values to pick the one with the lowest error rate when applied to our Test Data.
+
+We can accomplish this by using a <b>Python</b> loop and appending error rates to a list as shown:
 
 ```python
-# Add argument drop_first to method get_dummies to remove Multicollinearity from our model.
-sex_data = pd.get_dummies(titanic_data['Sex'], drop_first = True)
+    for i in np.arange (1, 101) :
+        # For this test, we must create a new instance of class KNeighborsClassifier from scikit-learn.
+            # Specify the parameter n_neighbors with the K value of i.
+        new_model = KNeighborsClassifier(n_neighbors = i)
+        # Train the model by fitting it to our Training Data.
+        new_model.fit(x_training,data, y_training_data)
+        # Make predictions on the Test Data.
+        new_predictions = new_model.predict(x_test_data)
+        # Calculate the mean difference for every incorrect prediction. 
+        error_rates.append(np.mean(new_predictions != y_test_data))
 ```
-
-### Confusion Matrix
-This is a tool used to identify weak areas of our Logistic Regression Model.
-The Data Set is divided into:
-
-<ul>
-    <li>True Positives</li>
-    <li>True Negatives</li>
-    <li>False Positives</li>
-    <li>False Negatives</li>
-</ul>
-
-<u>Here is an example:</u>
-
-|      n = 165      |    <b>Predicted: NO</b>  |   <b>Predicted: YES</b>  |                          |                 
-|:-----------------:|:------------------------:|:------------------------:|:------------------------:|             
-| <b>Actual: NO</b> |    True Negative = 50    |   False Positive = 10    |             60           |
-| <b>Actual: YES</b>|   False Negative = 5     |   True Positive = 100    |            105           |
-|                   |            55            |           110            |                          |
-
-This is used to measure your model performance in dangerous zones.
-For example, with respect to cancer diagnosis, you would want to ensure that your model doesn't have a high rate of 
-False Negatives. This would mean you are frequently classifying non-malignant tumors as malignant.
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 
