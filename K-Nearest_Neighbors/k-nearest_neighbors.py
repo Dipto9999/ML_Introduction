@@ -130,7 +130,7 @@ print(confusion_matrix(y_test_data, predictions_k_1))
 plt.plot(error_rates)
 
 #####################################################################################################################################
-################### Train Our K-Nearest Algorithm Model, Make Predictions, and Measure Performance (K Value of 50) ##################
+################### Train Our K-Nearest Neighbors Model, Make Predictions, and Measure Performance (K Value of 50) ##################
 #####################################################################################################################################
 
 # Instantiate the class KNeighborsClassifier

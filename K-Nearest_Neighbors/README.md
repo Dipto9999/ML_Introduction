@@ -10,7 +10,7 @@
     * [Data Set](#Data-Set)
     * [Scaling](#Scaling)
     * [Picking Best K Value](#Picking-Best-K-Value)
-        *[Elbow Method](#Elbow-Method)
+        * [Elbow Method](#Elbow-Method)
 * [Source](#Source)
 
 ## Brief Description
@@ -44,7 +44,7 @@ This results in overall low predictive error.
 ### Pros and Cons of K-Nearest Neighbors Algorithm
 <u>Main Advantages:</u>
 <ul>
-    <li>The algorithm is simple and easy to understand.</li>
+    <li>The Algorithm is simple and easy to understand.</li>
     <li>It is trivial to train the model on new Training Data.</li>
     <li>It's easy to add more data to the Data Set.</li>
     <li>The model accepts only 2 parameters : K and the distance metric you'd like to use (e.g. Euclidean distance)</li>
