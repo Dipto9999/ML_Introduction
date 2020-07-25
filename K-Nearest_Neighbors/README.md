@@ -2,7 +2,7 @@
 
 ## Contents
 * [Brief Description](#Brief-Description)
-    * [Simple Example ](#Simple-Example)
+    * [Simple Example](#Simple-Example)
     * [Building a K-Nearest Neighbors Algorithm](#Building-a-K-Nearest-Neighbors-Algorithm)
     * [Importance of K](#Importance-of-K)
     * [Pros and Cons of K-Nearest Neighbors Algorithm](#Pros-and-Cons-of-K-Nearest-Neighbors-Algorithm)
@@ -25,7 +25,7 @@ the K-Nearest Algorithm will predict that the new data point is also a football 
 General Steps:
 <ol>
     <li>Store the data.</li>
-    <li>Calculate the <a href = "https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean distance</a> from the 
+    <li>Calculate the <a href = "https://en.wikipedia.org/wiki/Euclidean_distance"><i>Euclidean distance</i></a> from the 
         new data point x to all the other data points.</li>
     <li>Sort the points in the Data Set in order of increasing distance from x.</li>
     <li>Predict using the same category as the majority of the K closest data points to x.</li>
@@ -42,15 +42,15 @@ The "best" value of K is where the error on the Test Data and Error on the Train
 This results in overall low predictive error.
 
 ### Pros and Cons of K-Nearest Neighbors Algorithm
-<u>Main Advantages:</u>
+Main Advantages:
 <ul>
     <li>The Algorithm is simple and easy to understand.</li>
     <li>It is trivial to train the model on new Training Data.</li>
     <li>It's easy to add more data to the Data Set.</li>
-    <li>The model accepts only 2 parameters : K and the distance metric you'd like to use (e.g. Euclidean distance)</li>
+    <li>The model accepts only 2 parameters : K and the distance metric you'd like to use (e.g. <i>Euclidean distance</i>)</li>
 </ul>
 
-<u>Main Disadvantages:</u>
+Main Disadvantages:
 <ul>
     <li>There's a high computational cost to making predictions.</li>
     <li>It doesn't work well with categorical features.</li>
