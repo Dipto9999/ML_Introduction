@@ -13,7 +13,7 @@ set of x values. The end product of a regression model is an equation that you c
 Note that you don't know the y-value in advance. 
 
 ## Jupyter Notebook
-In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Linear_Regression/linear_regression.ipynb">Notebook</a>, we are working with a data set of housing data and attempt to predict housing prices.
+In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Linear_Regression/linear_regression.ipynb">Notebook</a>, we are working with a Data Set of housing data and attempt to predict housing prices.
 
 ### Data Set
 The Data Set contains a number of features which are randomly generated. It is <a href = "https://nickmccullum.com/files/Housing_Data.csv">downloaded</a> from Nick McCullum's <a href= "https://nickmccullum.com">Website</a>.

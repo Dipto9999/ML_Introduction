@@ -24,7 +24,7 @@ The equation is given by f(x) = 1 / (1 + e^(-x)), otherwise known as a <a href =
 Generally a cutoff point is specified (e.g. 0.5) to separate data points into a category. For cancer diagnosis, the y-axis on the Logistic Regression Model represents the probability that a tumor is malignant. Likewise, the value (1-y) represents the probability that it is non-malignant. If the value is below 0.5, the data point is categorized as a non-malignant tumor as well as vice-versa.
 
 ## Jupyter Notebook
-In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Logistic_Regression/logistic_regression.ipynb">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
+In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Logistic_Regression/logistic_regression.ipynb">Notebook</a>, we are working with a Data Set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
 
 ### Data Set
 The Data Set contains information concerning the passengers and it is up to us to produce a Logistic Regression Model which we train to accurately make the predictions. 
@@ -49,7 +49,7 @@ The information provided includes:
 ### Data Cleaning
 
 #### Missing Values in Columns
-To deal with missing values in relevant columns, we used a mathematical solution called <u>Imputation</u> to fill in the average value.
+To deal with missing values in relevant columns, we used a mathematical solution called <i>Imputation</i> to fill in the average value.
 A custom function was written for this task.
 
 ```python

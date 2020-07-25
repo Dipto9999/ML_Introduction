@@ -1,5 +1,10 @@
 # Tutorial
 
+## Contents
+* [Brief Description](#Brief-Description)
+* [Jupyter Notebook](#Jupyter-Notebook)
+* [Source](#Source)
+
 ## Brief Description
 Upon installing the <b>Anaconda</b> Platform, I was emailed a 11 Minute video explaining
 the basic functionalities of <b>Ananconda Navigator</b>. Then they covered the layout of 
