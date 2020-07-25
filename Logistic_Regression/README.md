@@ -82,11 +82,13 @@ The Data Set is divided into:
 
 <u>Here is an example:</u>
 
+<p align= "center">
 |      n = 165      |    <b>Predicted: NO</b>  |   <b>Predicted: YES</b>  |                          |                 
 |:-----------------:|:------------------------:|:------------------------:|:------------------------:|             
 | <b>Actual: NO</b> |    True Negative = 50    |   False Positive = 10    |<p align= "center">60</p> |
 | <b>Actual: YES</b>|   False Negative = 5     |   True Positive = 100    |<p align= "center">105</p>|
 |                   | <p align= "center">55</p>|<p align= "center">110</p>|                          |
+</p>
 
 This is used to measure your model performance in dangerous zones.
 For example, with respect to cancer diagnosis, you would want to ensure that your model doesn't have a high rate of 
