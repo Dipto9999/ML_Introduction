@@ -1,5 +1,12 @@
 # Linear Regression
 
+## Contents
+* [Brief Description](#Brief-Description)
+* [Jupyter Notebook](#Jupyter-Notebook)
+    * [Data Set](#Data-Set)
+    * [Coefficients](#Coefficients)
+* [Source](#Source)
+
 ## Brief Description
 Linear Regression is a Machine Learning Algorithm which is used to predict some y values based on a
 set of x values. The end product of a regression model is an equation that you can use to predict the y-value of an x-value.

@@ -1,33 +1,19 @@
-# Logistic Regression
-
-## Contents
-* [Brief Description](#Brief-Description)
-    * [Sigmoid Function](#Sigmoid-Function)
-    * [Making Predictions](#Making-Predictions)
-* [Jupyter Notebook](#Jupyter-Notebook)
-    * [Data Set](#Data-Set)
-    * [Data Cleaning](#Data-Cleaning)
-        * [Missing Values in Columns](#Missing-Values-in-Columns)
-        * [Removing Multicollinearity](#Removing-Multicollinearity)
-    * [Confusion Matrix](#Confusion-Matrix)
-* [Source](#Source)
+# K-Nearest Neighbors
 
 ## Brief Description
-Logistic Regression is a Machine Learning Algorithm which is used to solve classification problems such as separating spam emails or disease diagnosis. 
-It is somewhat similar to Linear Regression. However, instead of calculating a numerical y value, it estimates which category a data point belongs to. There are only 2 possible categories a data point may belong to (i.e. Binary Classification Problem). 
+
 
 ### Sigmoid Function
-The line of best fit for Logistic Regression Models have a bend in the curve since they're not calculated using a linear equation as with Linear Regression.
-The equation is given by f(x) = 1 / (1 + e^(-x)), otherwise known as a <a href = "https://en.wikipedia.org/wiki/Sigmoid_function">Sigmoid Function</a>. This will generate an output between 0 and 1 regardless of the input.
+
 
 ### Making Predictions
-Generally a cutoff point is specified (e.g. 0.5) to separate data points into a category. For cancer diagnosis, the y-axis on the Logistic Regression Model represents the probability that a tumor is malignant. Likewise, the value (1-y) represents the probability that it is non-malignant. If the value is below 0.5, the data point is categorized as a non-malignant tumor as well as vice-versa.
+
 
 ## Jupyter Notebook
-In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Logistic_Regression/logistic_regression.ipynb">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
+In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/K-Nearest_Neighbors/k-nearest_neighbors.ipynb">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
 
 ### Data Set
-The Data Set contains information concerning the passengers and it is up to us to produce a Logistic Regression Model which we train to accurately make the predictions. 
+The data set contains information concerning the passengers and it is up to us to produce a Logistic Regression Model which we train to accurately make the predictions. 
 It is <a href = "https://nickmccullum.com/files/logistic-regression/titanic_train.csv">downloaded</a> from Nick McCullum's <a href= "https://nickmccullum.com">Website</a>. 
 
 The information provided includes:
@@ -106,7 +92,7 @@ False Negatives. This would mean you are frequently classifying non-malignant tu
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 
-There is also a <a href = "logistic_regression.py">Python Script</a> written with additional comments to further understand the procedure of developing this Prediction Algorithm. 
+There is also a <a href = "k-nearest_neighbors.py">Python Script</a> written with additional comments to further understand the procedure of developing this Prediction Algorithm. 
 
 ## Source
 <i>The information in this repository is derived from a FreeCodeCamp 
