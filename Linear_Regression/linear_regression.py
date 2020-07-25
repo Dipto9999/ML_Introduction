@@ -1,3 +1,7 @@
+################################################################################
+######## Import Open-Source Software Libraries Under Conventional Alias ########
+################################################################################
+
 # Import Library for Working with Tabular Data
 import pandas as pd
 # Import Library for Numerical Computing
@@ -12,6 +16,10 @@ import seaborn as sns
 # directly in our Jupyter Notebook. This will make them easier to 
 # access and interpret.
 %matplotlib inline 
+
+#####################################################################################
+########################## Learn About Data Set #####################################
+#####################################################################################
 
 # Import Housing Data Set into Jupyter Notebook Under raw_data Variable
 raw_data = pd.read_csv('Housing_Data.csv')
@@ -29,6 +37,10 @@ sns.pairplot(raw_data)
     # Price (which we are trying to predict)
     # Address (contains text)
 raw_data.columns
+
+#########################################################################################
+########### Split our titanic_data DataFrame into Training Data and Test Data ###########
+#########################################################################################
 
 # Create our x-array and assign it to a variable called x
 x = raw_data[['Avg. Area Income', 'Avg. Area House Age', 'Avg. Area Number of Rooms', 
@@ -48,6 +60,11 @@ from sklearn.model_selection import train_test_split
     # List unpacking is used to assign the proper values to the correct variable names.
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.3)
 
+#########################################################################################
+###################### Train Our Linear Regression Model ################################
+#########################################################################################
+
+
 # Must import the LinearRegression estimator from scikit-learn in order to
 # build and train the linear regression machine learning model.
 from sklearn.linear_model import LinearRegression
@@ -58,6 +75,10 @@ model = LinearRegression()
 
 # Can use scikit-learn's fit method to train this model on our Training Data.
 model.fit(x_train, y_train)
+
+#######################################################################################################
+######################  Dealing With Coefficients and Linear Regression Equation ######################
+#######################################################################################################
 
 # At this point model has been trained.
     # Can now examine each of the model's coefficients by printing them in this format.
@@ -74,6 +95,10 @@ pd.DataFrame(model.coef_, x.columns, columns = ['Coeff'])
 # Can similarly see the intercept of the regression equation.
 print(model.intercept_)
 
+#########################################################################################
+#################################### Make Predictions ###################################
+#########################################################################################
+
 # Call the predict method on the model variable to make predictions from a machine learning
 # model using scikit-learn. 
     # The predictions variable holds the predicted values of the features stored
@@ -84,6 +109,10 @@ predictions = model.predict(x_test)
     # A perfectly straight diagonal line in our scatterplot would indicate that our model perfectly predicted the 
     # y_array values.
 plt.scatter(y_test, predictions)
+
+#########################################################################################
+################################### Measure Performance #################################
+#########################################################################################
 
 # Can also plot residuals to visually assess the performance of our model. 
 # These are the difference between the actual y_array and the predicted y_array values.
