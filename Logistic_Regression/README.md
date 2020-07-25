@@ -12,7 +12,7 @@ The equation is given by f(x) = 1 / (1 + e^(-x)), otherwise known as a <a href =
 Generally a cutoff point is specified (e.g. 0.5) to separate data points into a category. For cancer diagnosis, the y-axis on the Logistic Regression Model represents the probability that a tumor is malignant. Likewise, the value (1-y) represents the probability that it is non-malignant. If the value is below 0.5, the data point is categorized as a non-malignant tumor as well as vice-versa.
 
 ## Jupyter Notebook
-In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Logistic_Regression/logistic_regression.py">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
+In our <a href= "https://nbviewer.jupyter.org/github/Dipto9999/ML-Introduction/blob/master/Logistic_Regression/logistic_regression.ipynb">Notebook</a>, we are working with a data set of Titanic passengers and attempt to predict whether each passenger survived the crash or not. This data set will be semi-cleaned to save us time on data cleaning and manipulation. 
 
 ### Data Set
 The data set contains information concerning the passengers and it is up to us to produce a Logistic Regression Model which we train to accurately make the predictions. 
@@ -82,11 +82,13 @@ The Data Set is divided into:
 
 <u>Here is an example:</u>
 
-| n = 165 | <b>Predicted: NO</b> | <b>Predicted: YES</b> |           | 
-|--------:|:---------------------|:---------------------:|:---------:|             
-| <b>Actual: NO</b> | True Negative = 50 | False Positive = 10 |  60 |
-| <b>Actual: YES</b>| False Negative = 5 | True Positive = 100 | 105 |
-|                   |         55         |         110         |     |
+<p align= "center">
+            |      n = 165      |    <b>Predicted: NO</b>  |   <b>Predicted: YES</b>  |                            |                 
+            |:-----------------:|:------------------------:|:------------------------:|:--------------------------:|             
+            | <b>Actual: NO</b> | True Negative = 50       |   False Positive = 10    | <p align = "center">60</p> |
+            | <b>Actual: YES</b>|  False Negative = 5      |   True Positive = 100    | <p align = "center">105</p>|
+            |                   |<p align = "center">55</p>|<p align = "center">110</p>|                           |
+</p>
 
 This is used to measure your model performance in dangerous zones.
 For example, with respect to cancer diagnosis, you would want to ensure that your model doesn't have a high rate of 
