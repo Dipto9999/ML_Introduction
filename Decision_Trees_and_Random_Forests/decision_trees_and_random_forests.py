@@ -57,15 +57,15 @@ y = raw_data['Kyphosis']
 # Use a test size of 30% to train our model. Use list unpacking to assign Training Data and Test Data.
 x_training_data, x_test_data, y_training_data, y_test_data = train_test_split(x, y, test_size = 0.3)
 
+############################################################
+#### Train Our Decision Tree Model and Make Predictions ####
+############################################################
+
 # Import class DecisionTreeClassifier from tree module of scikit-learn 
 from sklearn.tree import DecisionTreeClassifier
 
 # Create an object of class DecisionTreeClassifier
 decision_tree_model = DecisionTreeClassifier()
-
-############################################################
-#### Train Our Decision Tree Model and Make Predictions ####
-############################################################
 
 # Invoke method fit on object decision_tree_model by passing in x_training_Data and y_training data variables.
 decision_tree_model.fit(x_training_data, y_training_data)

@@ -110,7 +110,7 @@ We can accomplish this by using a <b>Python</b> loop and appending error rates t
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 
-There is also a <a href = "k-nearest_neighbors.py">Python Script</a> written with additional comments to further understand the procedure of developing this Prediction Algorithm. 
+There is also a <a href = "k-nearest_neighbors.py">Python Script</a> written with additional comments to further understand the procedure of developing this Machine Learning Algorithm. 
 
 ## Source
 <i>The information in this repository is derived from a FreeCodeCamp 

@@ -106,7 +106,7 @@ False Negatives. This would mean you are frequently classifying non-malignant tu
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 
-There is also a <a href = "logistic_regression.py">Python Script</a> written with additional comments to further understand the procedure of developing this Prediction Algorithm. 
+There is also a <a href = "logistic_regression.py">Python Script</a> written with additional comments to further understand the procedure of developing this Machine Learning Algorithm. 
 
 ## Source
 <i>The information in this repository is derived from a FreeCodeCamp 
