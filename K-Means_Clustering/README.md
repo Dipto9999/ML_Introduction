@@ -3,11 +3,11 @@
 ## Contents
 * [Brief Description](#Brief-Description)
     * [Examples of Usage](#Examples-of-Usage)
-    * [Unsupervised Machine Learning Algorithm](#Unsupervised-Machine-Learning-Algorithm)
+    * [Unsupervised Algorithm](#Unsupervised-Machine-Learning-Algorithm)
     * [How K-Means Clustering Works](#How-K-Means-Clustering-Works)
     * [Picking Best K Value](#Picking-Best-K-Value)
         * [Elbow Method](#Elbow-Method)
-            * [Sum of Squared Errors (SSE)](#Sum-of-Squared-Errors-(SSE))
+            * [Sum of Squared Errors](#Sum-of-Squared-Errors)
 * [Jupyter Notebook](#Jupyter-Notebook)
     * [Data Set](#Data-Set)
         * [Model Accuracy](#Model-Accuracy)
@@ -34,8 +34,8 @@ It is highly useful for solving real world problems. Examples include:
     <li>Predicting and Preventing Cybercrime</li>
 </ul>
 
-### Unsupervised Machine Learning Algorithm
-Since K-Means Clustering  is an Unsupervised Machine Learning Algorithm, we are able to train our model without separating the Test Data and Training Data as in all previous Supervised Machine Learning Models covered in this tutorial.
+### Unsupervised Algorithm
+Since K-Means Clustering is an Unsupervised Machine Learning Algorithm, we are able to train our model without separating the Test Data and Training Data as in all previous Supervised Machine Learning Models covered in this tutorial.
 
 ### How K-Means Clustering Works
 In order to run a K-Means Clustering Algorithm:
@@ -57,7 +57,7 @@ Since the K value changes the predictive power and simplicity of our K-Means Clu
 #### Elbow Method
 As with the K-Nearest Neighbors Algorithm, the Elbow Method can be used to determine a wise K value for our Data Set. 
 
-##### Sum of Squared Errors (SSE)
+##### Sum of Squared Errors 
 In the K-Means Clustering Algorithm, it's required to compute the <i>Sum of Squared Errors (SSE)</i> for a group of K values. This is defined as the sum of squared distance between each data point in a cluster and that cluster's centroid. Generating a plot of the <i>SSE</i> against these different K values usually shows that the error decreases as the K value increases. Phrased differently, the more categories that exist within a Data Set, the more likely it is that each data point is close to the center of its specific cluster. 
 
 <p align="center"><img src="Elbow_Method_Graph.jpg" width="60%" height="60%" title="Elbow Method for Optimal K Value" ></p>
