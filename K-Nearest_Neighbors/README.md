@@ -34,12 +34,13 @@ General Steps:
 ### Importance of K
 Changing the value of K will change which category a new data point is assigned to:
 <ul>
-    <li>A low K value will cause your model to perfectly predict Training Data and poorly predict Test Data</li>
+    <li>A low K value will cause your model to perfectly predict Training Data and poorly predict Test Data.</li>
     <li>A too high K value will make your model unnecessarily complex.</li>
 </ul>
 
-The "best" value of K is where the error on the Test Data and Error on the Training Data are close to one another.
-This results in overall low predictive error.
+<p align="center"><img src="Predictive_Error_Diagram.jpg" width="60%" height="60%" title="Predictive Error Diagram" ></p>
+
+The "best" value of K is where the error on the Test Data and Error on the Training Data are so that there is low predictive error overall.
 
 ### Pros and Cons of K-Nearest Neighbors Algorithm
 Main Advantages:
