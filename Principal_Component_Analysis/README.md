@@ -5,7 +5,7 @@
     * [Difference From Linear Regression](#Difference-From-Linear-Regression)
     * [PCA Biplot](#PCA-Biplot)
     * [Main Usage](#Main-Usage)
-        *[Tradeoff](#Tradeoff)
+        * [Tradeoff](#Tradeoff)
 * [Jupyter Notebook](#Jupyter-Notebook)
     * [Data Set](#Data-Set)
     * [Scaled Features](#Scaled-Features)
