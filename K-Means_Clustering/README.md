@@ -73,6 +73,7 @@ aren't known beforehand.
 
 #### Model Accuracy
 For our purposes, the clusters included with the Data Set are rather useful for visually assessing the accuracy of our K-Means Clustering Model. We can compare the grouping of the data points in separate <i>scatterplots</i> using the <b>matplotlib</b> library in <b>Python</b>. 
+_____________________________________________________________________________________________________________________________________________
 
 ```python
 # Visualize the accuracy of the K-Means Clustering Model 
@@ -88,6 +89,7 @@ ax1.scatter(raw_data[0][:, 0], raw_data[0][:, 1], c = model.labels_)
 ax2.set_title('Original Data')
 ax2.scatter(raw_data[0][:, 0], raw_data[0][:, 1], c = raw_data[1])
 ```
+_____________________________________________________________________________________________________________________________________________
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 

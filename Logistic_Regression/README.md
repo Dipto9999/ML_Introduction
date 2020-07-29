@@ -51,6 +51,7 @@ The information provided includes:
 #### Missing Values in Columns
 To deal with missing values in relevant columns, we used a mathematical solution called <i>Imputation</i> to fill in the average value.
 A custom function was written for this task.
+_____________________________________________________________________________________________________________________________________________
 
 ```python
 def impute_missing_age(columns) :
@@ -71,15 +72,18 @@ def impute_missing_age(columns) :
     else
         return age
 ```
+_____________________________________________________________________________________________________________________________________________
 
 #### Removing Multicollinearity
 Since we must numerically work with our categorical features, we must ensure that numerical representations which are perfectly predictive of 
 each other are removed. This improves the predictive power of our algorithm.  For example, a 0 in Female column reduntantly indicates a 1 in Male column. 
+_____________________________________________________________________________________________________________________________________________
 
 ```python
 # Add argument drop_first to method get_dummies to remove Multicollinearity from our model.
 sex_data = pd.get_dummies(titanic_data['Sex'], drop_first = True)
 ```
+_____________________________________________________________________________________________________________________________________________
 
 ### Confusion Matrix
 This is a tool used to identify weak areas of our Logistic Regression Model.

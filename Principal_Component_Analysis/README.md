@@ -50,6 +50,7 @@ Our Principal Component Analysis Model is used to reduce the 30 features describ
 
 ### Scaled Features
 Prior to combining the features of the Data Set to yield our principal components in a transformed Data Set, the original Data Set must be standardized so that each feature is approximately the same size. This procedure is accomplished using class <b>StandardScaler</b> from the <b>scikit-learn</b> library.
+_____________________________________________________________________________________________________________________________________________
 
 ```python
 # Use class StandardScaler from scikit-learn library.
@@ -66,6 +67,7 @@ data_scaler.fit(raw_data_frame)
 # Create a new Data Set with standardized observations.
 scaled_data_frame = data_scaler.transform(raw_data_frame)
 ```
+_____________________________________________________________________________________________________________________________________________
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
 

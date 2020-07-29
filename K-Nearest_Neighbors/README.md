@@ -68,6 +68,7 @@ It's necessary to scale the x-values of our Data Set to use the observations clo
 It is common practice to standardize the Data Set by adjusting every x-value so they're approximately on the same scale.
 
 The <b>scikit-learn</b> library includes excellent functionality for this in the class <b>StandardScaler</b>.
+_____________________________________________________________________________________________________________________________________________
 
 ``` python
 # Import the class StandardScaler from scikit-learn.
@@ -87,6 +88,7 @@ scaled_features = scaler.transform(raw_data.drop('TARGET CLASS', axis = 1))
 # Create a pandas DataFrame of the features.
 scaled_data = pd.DataFrame(scaled_features, columns = raw_data.drop('TARGET CLASS', axis = 1).columns)
 ```
+_____________________________________________________________________________________________________________________________________________
 
 ### Picking Best K Value
 Since the K value changes the predictive power and simplicity of our K-Nearest Neighbors Algorithm, we must be deliberate with the K value used to perform predictions on our Data Set.
@@ -95,6 +97,7 @@ Since the K value changes the predictive power and simplicity of our K-Nearest N
 This involves iterating through a series of K values to pick the one with the lowest error rate when applied to our Test Data.
 
 We can accomplish this by using a <b>Python</b> loop and appending error rates to a list as shown:
+_____________________________________________________________________________________________________________________________________________
 
 ```python
     for i in np.arange (1, 101) :
@@ -108,7 +111,6 @@ We can accomplish this by using a <b>Python</b> loop and appending error rates t
         # Calculate the mean difference for every incorrect prediction. 
         error_rates.append(np.mean(new_predictions != y_test_data))
 ```
-
 _____________________________________________________________________________________________________________________________________________
 
 <p align="center"><img src="Jupyter_Notebook-Preview.JPG" width="60%" height="60%" title="Preview of Notebook" ></p>
