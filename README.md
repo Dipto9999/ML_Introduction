@@ -17,6 +17,7 @@ functionalities in <b>Jupyter Notebook</b>.
 
 ### Import Statements
 All the Machine Learning Algorithms covered in this Introduction import the following open-source libraries.
+_____________________________________________________________________________________________________________________________________________
 
 ```python
 # Import Library for Working with Tabular Data
@@ -34,6 +35,7 @@ import seaborn as sns
 # access and interpret.
 %matplotlib inline
 ```
+_____________________________________________________________________________________________________________________________________________
 
 ## Source
 <i>The information in this repository is derived from a FreeCodeCamp 
